@@ -1,6 +1,6 @@
 Youtube: https://www.youtube.com/watch?v=OZGdKYzUYvU&t=442s&ab_channel=CodAffection
 
-Time to finish: 15:30 / 1:35:57
+Time to finish: 16:16 / 1:35:57
 
 --Dependencies
 *Microsoft.EntityFrameworkCore
