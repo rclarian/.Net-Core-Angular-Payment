@@ -4,3 +4,9 @@ Youtube: https://www.youtube.com/watch?v=OZGdKYzUYvU&t=442s&ab_channel=CodAffect
 *Microsoft.EntityFrameworkCore
 *Microsoft.EntityFrameworkCore.SqlServer
 *Microsoft.EntityFrameworkCore.Tools
+
+--Run EntityFramework
+* Tools > Nuget Package Manager > Nuget Package Console
+- 2 Commands
+* Add-Migration "Name of Migration"
+* Update-Database
