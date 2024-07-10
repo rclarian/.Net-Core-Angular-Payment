@@ -14,6 +14,7 @@ export class PaymentDetailService implements OnDestroy{
   url: string = environment.apiBaseUrl + '/PaymentDetail';
   list: PaymentDetail[] = [];
   formData: PaymentDetail = new PaymentDetail();
+  formSubmitted: boolean = false;
   private paymentDetailSubscription?: Subscription
 
   constructor(private http: HttpClient) { }
@@ -38,6 +39,7 @@ export class PaymentDetailService implements OnDestroy{
   resetForm(form: NgForm){
     form.form.reset();
     this.formData = new PaymentDetail();
+    this.formSubmitted = false;
   }
 
   ngOnDestroy(){

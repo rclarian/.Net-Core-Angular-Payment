@@ -19,7 +19,9 @@ export class PaymentDetailFormComponent{
   }
 
   onSubmit(form: NgForm){
-     this.service.postPaymentDetail()
+    this.service.formSubmitted = true;
+    if(form.valid){
+      this.service.postPaymentDetail()
       .subscribe({
         next: res => {
           this.service.list = res as PaymentDetail[];
@@ -30,6 +32,7 @@ export class PaymentDetailFormComponent{
           console.log(err);
         }
       })
+    }
   }
 
 }
