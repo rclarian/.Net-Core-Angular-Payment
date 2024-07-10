@@ -12,3 +12,12 @@ Time to finish: 16:16 / 1:35:57
 - 2 Commands
 * Add-Migration "Name of Migration"
 * Update-Database
+
+
+--Angular--
+ng g c payment-details/payment-detail-form --skip-tests
+ng g s shared/payment-detail --skip-tests
+ng g cl  shared/payment-detail --type=model --skip-tests
+
+Bootstrap: https://getbootstrap.com/
+Font-awesone: https://cdnjs.com/libraries/font-awesome
