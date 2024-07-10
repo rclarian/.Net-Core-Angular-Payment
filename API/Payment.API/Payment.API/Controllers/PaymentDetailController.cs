@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Payment.API.Models;
@@ -77,7 +78,8 @@ namespace Payment.API.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return Ok(await _context.PaymentDetails.ToListAsync());
         }
 
         // POST: api/PaymentDetail
@@ -92,7 +94,8 @@ namespace Payment.API.Controllers
             _context.PaymentDetails.Add(paymentDetail);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
+            //return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
+            return Ok(await _context.PaymentDetails.ToListAsync());
         }
 
         // DELETE: api/PaymentDetail/5
@@ -112,7 +115,8 @@ namespace Payment.API.Controllers
             _context.PaymentDetails.Remove(paymentDetail);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            //return NoContent();
+            return Ok(await _context.PaymentDetails.ToListAsync());
         }
 
         private bool PaymentDetailExists(int id)

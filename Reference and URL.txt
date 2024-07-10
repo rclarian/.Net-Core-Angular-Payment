@@ -18,6 +18,12 @@ Time to finish: 16:16 / 1:35:57
 ng g c payment-details/payment-detail-form --skip-tests
 ng g s shared/payment-detail --skip-tests
 ng g cl  shared/payment-detail --type=model --skip-tests
+ng g environments
+
 
 Bootstrap: https://getbootstrap.com/
 Font-awesone: https://cdnjs.com/libraries/font-awesome
+npmjs: https://www.npmjs.com/package/ngx-toastr
+npm i ngx-toastr
+
+apiBaseURL: http://localhost:5131

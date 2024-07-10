@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PaymentDetailService } from '../../shared/payment-detail.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { PaymentDetail } from '../../shared/payment-detail.model';
 
 
 @Component({
@@ -20,22 +21,13 @@ export class PaymentDetailFormComponent{
      this.service.postPaymentDetail()
       .subscribe({
         next: res => {
-          console.log(res);
+          this.service.list = res as PaymentDetail[];
+          this.service.resetForm(form);
         },
         error: err => {
           console.log(err);
         }
       })
   }
-
-  // ngOnDestroy(){
-  //   this.paymentDetailFormSubscription.unsubscribe();
-  // }
-
-  // ngOnInit() {
-  //   this.service.refreshList();
-  // }
-
-  
 
 }
