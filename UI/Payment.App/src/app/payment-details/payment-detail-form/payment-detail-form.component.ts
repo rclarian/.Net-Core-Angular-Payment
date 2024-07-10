@@ -3,6 +3,7 @@ import { PaymentDetailService } from '../../shared/payment-detail.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { PaymentDetail } from '../../shared/payment-detail.model';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { PaymentDetail } from '../../shared/payment-detail.model';
 export class PaymentDetailFormComponent{
 
   private paymentDetailFormSubscription?: Subscription
-  constructor(public service : PaymentDetailService ){
+  constructor(public service : PaymentDetailService, private toastr: ToastrService ){
 
   }
 
@@ -23,6 +24,7 @@ export class PaymentDetailFormComponent{
         next: res => {
           this.service.list = res as PaymentDetail[];
           this.service.resetForm(form);
+          this.toastr.success('Added successfully', 'Payment Detail Register');
         },
         error: err => {
           console.log(err);
