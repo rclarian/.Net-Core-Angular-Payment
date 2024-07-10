@@ -12,6 +12,7 @@ export class PaymentDetailService implements OnDestroy{
 
   url: string = environment.apiBaseUrl + '/PaymentDetail';
   list: PaymentDetail[] = [];
+  formData: PaymentDetail = new PaymentDetail();
   private paymentDetailSubscription?: Subscription
 
   constructor(private http: HttpClient) { }
@@ -27,6 +28,10 @@ export class PaymentDetailService implements OnDestroy{
           console.log(err)
         }
       })
+  }
+
+  postPaymentDetail(){
+    return this.http.post(this.url, this.formData);
   }
 
   ngOnDestroy(){
