@@ -9,7 +9,7 @@ using Payment.API.Models;
 
 namespace Payment.API.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PaymentDetailController : ControllerBase
     {
